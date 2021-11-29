@@ -10,7 +10,7 @@ if [[ $? -ne 0 ]]; then
 fi
 
 while read -r line; do
-    dnf install "$line"
+    dnf install -y "$line"
     if [[ $? -ne 0 ]]; then
         log::error "Command 'dnf' returned non-zero code. Failed to install '${line}'."
         exit 1
